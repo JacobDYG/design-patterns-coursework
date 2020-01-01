@@ -1,4 +1,4 @@
-package model;
+package model.user;
 
 import controller.ExampleAction;
 import controller.IAction;

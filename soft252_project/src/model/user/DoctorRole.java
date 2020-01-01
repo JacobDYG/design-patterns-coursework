@@ -1,17 +1,17 @@
-package model;
+package model.user;
 
 import controller.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PatientRole implements IRole {
+public class DoctorRole implements IRole {
     //The friendly name of this Role and the list of its allowed actions
-    String name = "Patient Role";
+    String name = "Doctor Role";
     private List<IAction> allowedActions = new ArrayList<IAction>();
 
     //Constructor - adds default actions to the list
-    PatientRole(){
+    DoctorRole(){
         addDefaultActions();
     }
 

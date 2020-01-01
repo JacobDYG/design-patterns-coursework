@@ -1,7 +1,6 @@
 package view;
 
-import controller.ExampleAction;
-import model.*;
+import model.user.User;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -28,13 +27,13 @@ public class StartForm {
         frame.setVisible(true);
         System.out.println("Form started");
 
-        User dave = new User("Admin", "Dave");
+        User dave = new User("Admin", 1, "Dave", "1 ARoad, ATown");
 
         dave.getRole().getAction("Example Action").perform();
         dave.getRole().getAction("Example Action Two").perform();
 
-        User bill = new User("Patient", "Bill");
-        User henry = new User("Secretary","Henry");
-        User sarah = new User("Doctor","Sarah");
+        User bill = new User("Patient", 2, "Bill", "2 ARoad, ATown", "Male", 25);
+        User henry = new User("Secretary", 3, "Henry", "3 ARoad, ATown");
+        User sarah = new User("Doctor", 4, "Sarah", "4 ARoad, ATown");
     }
 }

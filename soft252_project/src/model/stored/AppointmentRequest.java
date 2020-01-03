@@ -1,4 +1,4 @@
-package model.request;
+package model.stored;
 
 import java.util.Date;
 

@@ -1,7 +1,7 @@
 package controller.role;
 
 import controller.command.*;
-import model.request.Request;
+import model.stored.Request;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
 package controller.role;
 
 import controller.command.*;
-import model.Feedback;
+import model.stored.Feedback;
 
 import java.util.ArrayList;
 import java.util.List;

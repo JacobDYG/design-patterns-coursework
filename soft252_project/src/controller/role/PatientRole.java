@@ -1,8 +1,8 @@
 package controller.role;
 
 import controller.command.*;
-import model.Appointment;
-import model.Prescription;
+import model.stored.Appointment;
+import model.stored.Prescription;
 
 import java.util.ArrayList;
 import java.util.List;

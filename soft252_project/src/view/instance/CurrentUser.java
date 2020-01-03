@@ -2,7 +2,7 @@ package view.instance;
 
 import controller.command.ICommand;
 import controller.role.*;
-import model.User;
+import model.stored.User;
 
     //Singleton implementation for running commands as a user.
     //Singleton is used as there should only be one user logged in at a time.

@@ -1,7 +1,6 @@
 package view.gui;
 
-import view.instance.CurrentUser;
-import model.User;
+import controller.instance.JSONReader;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -28,8 +27,6 @@ public class StartForm {
         frame.setVisible(true);
         System.out.println("Form started");
 
-        User newUser = new User("Patient", 1, "Dave", "Dave's house", "Male", 20);
-        CurrentUser.setCurrentUser(newUser);
-        CurrentUser.getCurrentUser().testSingleton();
+        JSONReader.readMedicines();
     }
 }

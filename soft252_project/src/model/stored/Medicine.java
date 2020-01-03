@@ -1,4 +1,4 @@
-package model;
+package model.stored;
 
 public class Medicine {
     private int medicineId;

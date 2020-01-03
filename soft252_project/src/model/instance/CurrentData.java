@@ -1,7 +1,7 @@
 package model.instance;
 
-import model.Medicine;
-import model.User;
+import model.stored.Medicine;
+import model.stored.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,12 +46,6 @@ public class CurrentData {
         return allUsers.removeIf(user -> user.getUserId() == userId);
     }
 
-    //Return the user list for inspection
-    public static List<User> getUserList()
-    {
-        return allUsers;
-    }
-
     //Add a medicine
     public static void addMedicine(Medicine inputMedicine)
     {
@@ -62,11 +56,5 @@ public class CurrentData {
     public static boolean removeMedicine(int medicineId)
     {
         return allMedicines.removeIf(medicine -> medicine.getMedicineId() == medicineId);
-    }
-
-    //Return the medicine list for inspection
-    public static List<Medicine> getMedicineList()
-    {
-        return allMedicines;
     }
 }

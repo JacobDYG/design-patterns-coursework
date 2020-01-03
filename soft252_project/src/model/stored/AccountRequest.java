@@ -1,6 +1,4 @@
-package model.request;
-
-import model.User;
+package model.stored;
 
 public class AccountRequest extends Request {
 

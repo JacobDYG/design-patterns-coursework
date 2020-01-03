@@ -1,0 +1,14 @@
+[
+    {
+        "medicine": {
+            "medicineId": 1,
+            "medicineName": "Paracetamol"
+        }
+    },
+    {
+        "medicine": {
+            "medicineId": 2,
+            "medicineName": "Ibuprofen"
+        }
+    }
+]

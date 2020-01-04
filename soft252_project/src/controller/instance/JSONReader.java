@@ -23,7 +23,10 @@ public class JSONReader {
 
             System.out.println(readJson);
 
-            readJson.forEach(medicine -> parseMedicineObject((JSONObject) medicine));
+            for (Object medicine : readJson)
+            {
+                parseMedicineObject((JSONObject) medicine);
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -41,5 +44,34 @@ public class JSONReader {
         String medicineName = (String) medicineObject.get("medicineName");
 
         CurrentData.addMedicine(new Medicine(medicineId, medicineName));
+    }
+
+    public static void readUsers()
+    {
+        //Create a new JSON parser to read the object
+        JSONParser parser = new JSONParser();
+
+        try (FileReader reader = new FileReader("users.json")) {
+            //Read JSON file
+            JSONArray readJson = (JSONArray) parser.parse(reader);
+
+            System.out.println(readJson);
+
+            for (Object user : readJson)
+            {
+                parseUserObject((JSONObject) user);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void parseUserObject(JSONObject user)
+    {
+        System.out.println("bruh");
     }
 }

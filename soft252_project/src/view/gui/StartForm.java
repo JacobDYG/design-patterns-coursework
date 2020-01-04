@@ -1,6 +1,7 @@
 package view.gui;
 
 import controller.instance.JSONReader;
+import controller.instance.JSONWriter;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -28,5 +29,8 @@ public class StartForm {
         System.out.println("Form started");
 
         JSONReader.readMedicines();
+        JSONWriter.WriteMedicines();
+
+        JSONReader.readUsers();
     }
 }

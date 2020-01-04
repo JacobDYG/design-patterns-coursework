@@ -1,0 +1,12 @@
+[
+    {
+        "user": {
+            "role": "Admin",
+            "userId": 1,
+            "name": "Dave the Admin",
+            "address": "Dave's House, 69 Dave Street",
+            "gender": null,
+            "age": null
+        }
+    }
+]

@@ -11,9 +11,6 @@ public class PatientRole implements IRole {
     //The friendly name of this Role and the list of its allowed actions
     String name = "Patient Role";
     private List<ICommand> allowedCommands = new ArrayList<ICommand>();
-    //Patient specific data
-    private List<Appointment> appointmentList = new ArrayList<>();
-    private List<Prescription> prescriptionList = new ArrayList<>();
 
     //Constructor - adds default actions to the list
     public PatientRole(){
@@ -39,41 +36,5 @@ public class PatientRole implements IRole {
             }
         }
         return null;
-    }
-
-    //Add an appointment
-    public void addAppointment(Appointment inputAppointment)
-    {
-        appointmentList.add(inputAppointment);
-    }
-    
-    //Remove an appointment
-    public boolean removeAppointment(int appointmentId)
-    {
-        return appointmentList.removeIf(appointment -> appointment.getAppointmentId() == appointmentId);
-    }
-    
-    //Return the appointments list for inspection
-    public List<Appointment> getAppointmentList()
-    {
-        return appointmentList;
-    }
-
-    //Add a prescription
-    public void addPrescription(Prescription inputPrescription)
-    {
-        prescriptionList.add(inputPrescription);
-    }
-
-    //Remove a prescription
-    public boolean removePrescription(int prescriptionId)
-    {
-        return prescriptionList.removeIf(prescription -> prescription.getPrescriptionId() == prescriptionId);
-    }
-    
-    //Return the prescriptions list for inspection
-    public List<Prescription> getPrescriptionList()
-    {
-        return prescriptionList;
     }
 }

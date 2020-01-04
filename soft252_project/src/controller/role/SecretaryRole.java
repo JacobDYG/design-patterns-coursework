@@ -10,8 +10,6 @@ public class SecretaryRole implements IRole {
     //The friendly name of this Role and the list of its allowed actions
     String name = "Secretary Role";
     private List<ICommand> allowedCommands = new ArrayList<ICommand>();
-    //Secretary specific data
-    private List<Request> requestList = new ArrayList<>();
 
     //Constructor - adds default actions to the list
     public SecretaryRole(){
@@ -35,23 +33,5 @@ public class SecretaryRole implements IRole {
             }
         }
         return null;
-    }
-
-    //Add a request
-    public void addRequest(Request inputRequest)
-    {
-        requestList.add(inputRequest);
-    }
-
-    //Remove a request
-    public boolean removeRequest(int requestId)
-    {
-        return requestList.removeIf(request -> request.getRequestId() == requestId);
-    }
-
-    //Return the request list for inspection
-    public List<Request> getRequestList()
-    {
-        return requestList;
     }
 }

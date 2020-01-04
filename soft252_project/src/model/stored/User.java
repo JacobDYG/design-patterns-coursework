@@ -1,9 +1,14 @@
 package model.stored;
 
+import controller.role.PatientRole;
+import model.stored.role.IRoleData;
+import model.stored.role.PatientRoleData;
+
 public class User {
     //Users role
     private String role;
     //Users private data
+    private IRoleData roleData;
     private int userId;
     private String name;
     private String address;
@@ -11,7 +16,7 @@ public class User {
     private int age;
 
     //Constructor for patient
-    public User(String role, int userId, String name, String address, String gender, int age) {
+    public User(String role, PatientRole roleData, int userId, String name, String address, String gender, int age) {
         if (role == "Patient")
         {
             this.role = role;
@@ -23,17 +28,13 @@ public class User {
         }
         else
         {
-            this.role = role;
-            this.userId = userId;
-            this.name = name;
-            this.address = address;
-            System.out.println("Warning: Too many arguments were passed for this type of user. The user has been created with only the necessary data.");
+            System.out.println("Invalid parameters were provided for this type of user.");
         }
 
     }
     //Constructor for non patients
-    public User(String role, int userId, String name, String address) {
-        if (role != "Patient")
+    public User(String role, IRoleData roleData, int userId, String name, String address) {
+        if (role != "Patient" && !(roleData instanceof PatientRoleData))
         {
             this.role = role;
             this.userId = userId;
@@ -42,7 +43,7 @@ public class User {
         }
         else
         {
-            System.out.println("Error: Essential arguments for this role were not provided, the user has not been created.");
+            System.out.println("Invalid parameters were provided for this type of user.");
         }
     }
 

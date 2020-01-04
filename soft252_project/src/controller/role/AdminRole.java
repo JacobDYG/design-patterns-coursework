@@ -10,8 +10,6 @@ public class AdminRole implements IRole {
     //The friendly name of this Role and the list of its allowed actions
     String name = "Admin Role";
     private List<ICommand> allowedCommands = new ArrayList<ICommand>();
-    //Admin specific data
-    private List<Feedback>  pendingFeedbackList = new ArrayList<>();
 
     //Constructor - adds default actions to the list
     public AdminRole(){
@@ -35,23 +33,5 @@ public class AdminRole implements IRole {
             }
         }
         return null;
-    }
-
-    //Add a feedback
-    public void addFeedback(Feedback inputFeedback)
-    {
-        pendingFeedbackList.add(inputFeedback);
-    }
-
-    //Remove a feedback
-    public boolean removeFeedback(int feedbackId)
-    {
-        return pendingFeedbackList.removeIf(feedback -> feedback.getFeedbackId() == feedbackId);
-    }
-
-    //Return the feedback list for inspection
-    public List<Feedback> getFeedbackList()
-    {
-        return pendingFeedbackList;
     }
 }

@@ -69,6 +69,8 @@ public class JSONWriter {
         thisUserDetails.put("userId", user.getUserId());
         thisUserDetails.put("name", user.getName());
         thisUserDetails.put("address", user.getAddress());
+        thisUserDetails.put("username", user.getUsername());
+        thisUserDetails.put("password", user.getPassword());
 
         //Role specific - puts the role specific data for each type, and
         //puts gender and age if the user is a patient

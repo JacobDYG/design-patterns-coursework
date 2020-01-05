@@ -7,6 +7,9 @@ import model.stored.role.PatientRoleData;
 public class User {
     //Users role
     private String role;
+    //Users login data
+    private String username;
+    private String password;
     //Users private data
     private IRoleData roleData;
     private int userId;
@@ -16,10 +19,12 @@ public class User {
     private int age;
 
     //Constructor for patient
-    public User(String role, IRoleData roleData, int userId, String name, String address, String gender, int age) {
+    public User(String role, String username, String password, IRoleData roleData, int userId, String name, String address, String gender, int age) {
         if (role.equals("Patient") && (roleData instanceof PatientRoleData))
         {
             this.role = role;
+            this.username = username;
+            this.password = password;
             this.roleData = roleData;
             this.userId = userId;
             this.name = name;
@@ -34,10 +39,12 @@ public class User {
 
     }
     //Constructor for non patients
-    public User(String role, IRoleData roleData, int userId, String name, String address) {
+    public User(String role, String username, String password, IRoleData roleData, int userId, String name, String address) {
         if (!role.equals("Patient") && !(roleData instanceof PatientRoleData))
         {
             this.role = role;
+            this.username = username;
+            this.password = password;
             this.roleData = roleData;
             this.userId = userId;
             this.name = name;
@@ -56,6 +63,14 @@ public class User {
 
     public int getUserId() {
         return userId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public String getName() {
@@ -79,9 +94,13 @@ public class User {
         return roleData;
     }
 
-    //Setters for all attributes except userId, as this does not need to change
+    //Setters for all attributes except userId and username, as these does not need to change
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setName(String name) {
@@ -98,10 +117,5 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public void testSingleton()
-    {
-        System.out.println("Success!");
     }
 }

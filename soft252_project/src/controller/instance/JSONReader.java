@@ -82,6 +82,8 @@ public class JSONReader {
         User thisUser;
 
         String role = (String) userObject.get("role");
+        String username = (String) userObject.get("username");
+        String password = (String) userObject.get("password");
         int userId = (int)(long) userObject.get("userId");
         String name = (String) userObject.get("name");
         String address = (String) userObject.get("address");
@@ -95,24 +97,24 @@ public class JSONReader {
         if (role.equals("Admin"))
         {
             roleData = parseAdminLists(userObject);
-            thisUser = new User(role, roleData, userId, name, address);
+            thisUser = new User(role, username, password, roleData, userId, name, address);
         }
         else if (role.equals("Secretary"))
         {
             roleData = parseSecretaryLists(userObject);
-            thisUser = new User(role, roleData, userId, name, address);
+            thisUser = new User(role, username, password, roleData, userId, name, address);
         }
         else if (role.equals("Doctor"))
         {
             roleData = parseDoctorLists(userObject);
-            thisUser = new User(role, roleData, userId, name, address);
+            thisUser = new User(role, username, password, roleData, userId, name, address);
         }
         else //patient
         {
             gender = (String) userObject.get("gender");
             age = (int)(long) userObject.get("age");
             roleData = parsePatientLists(userObject);
-            thisUser = new User(role, roleData, userId, name, address, gender, age);
+            thisUser = new User(role, username, password, roleData, userId, name, address, gender, age);
         }
 
         return thisUser;

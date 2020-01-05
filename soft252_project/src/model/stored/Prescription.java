@@ -8,13 +8,13 @@ public class Prescription {
     private int doctorId;
     private int patientId;
     private String doctorNotes;
-    private List<PrescribedMedicine> medicineList = new ArrayList<>();
+    private List<PrescribedMedicine> prescribedMedicineList = new ArrayList<>();
 
-    public Prescription(int prescriptionId, int doctorId, int patientId, List<PrescribedMedicine> medicineList) {
+    public Prescription(int prescriptionId, int doctorId, int patientId, List<PrescribedMedicine> prescribedMedicineList) {
         this.prescriptionId = prescriptionId;
         this.doctorId = doctorId;
         this.patientId = patientId;
-        this.medicineList = medicineList;
+        this.prescribedMedicineList = prescribedMedicineList;
     }
 
     public int getPrescriptionId()
@@ -22,18 +22,18 @@ public class Prescription {
         return prescriptionId;
     }
 
-    public List<PrescribedMedicine> getMedicineList() {
-        return medicineList;
+    public List<PrescribedMedicine> getPrescribedMedicineList() {
+        return prescribedMedicineList;
     }
 
     public boolean addMedicine(Medicine inputMedicine, int inputQuantity, String inputDosage)
     {
-        return medicineList.add(new PrescribedMedicine(inputMedicine, inputQuantity, inputDosage));
+        return prescribedMedicineList.add(new PrescribedMedicine(inputMedicine, inputQuantity, inputDosage));
     }
 
     public boolean removeMedicine(int inputMedicineId)
     {
-        return medicineList.removeIf(prescribedMedicine -> prescribedMedicine.getMedicine().getMedicineId() == inputMedicineId);
+        return prescribedMedicineList.removeIf(prescribedMedicine -> prescribedMedicine.getMedicine().getMedicineId() == inputMedicineId);
     }
 
     public int getDoctorId() {

@@ -9,12 +9,4 @@ public class AdminRoleTest {
     @Test
     public void getCommand() {
     }
-
-    @Test
-    public void addFeedback() {
-    }
-
-    @Test
-    public void removeFeedback() {
-    }
 }

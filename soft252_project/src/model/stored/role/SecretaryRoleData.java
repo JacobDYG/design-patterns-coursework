@@ -5,7 +5,7 @@ import model.stored.Request;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SecretaryRoleData {
+public class SecretaryRoleData implements IRoleData {
     //Secretary specific data
     private List<Request> requestList = new ArrayList<>();
 

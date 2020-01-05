@@ -6,7 +6,7 @@ import model.stored.Prescription;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PatientRoleData {
+public class PatientRoleData implements IRoleData {
     //Patient specific data
     private List<Appointment> appointmentList = new ArrayList<>();
     private List<Prescription> prescriptionList = new ArrayList<>();

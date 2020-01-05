@@ -6,7 +6,7 @@ import model.stored.Feedback;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoctorRoleData {
+public class DoctorRoleData implements IRoleData {
     //Doctor specific data
     private List<Appointment> appointmentList = new ArrayList<>();
     private List<Feedback> feedbackList = new ArrayList<>();

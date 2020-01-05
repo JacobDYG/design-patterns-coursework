@@ -5,7 +5,7 @@ import model.stored.Feedback;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminRoleData {
+public class AdminRoleData implements IRoleData {
 
     //Admin specific data
     private List<Feedback> pendingFeedbackList = new ArrayList<>();

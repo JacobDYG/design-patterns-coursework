@@ -6,6 +6,7 @@ import controller.instance.JSONWriter;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 public class StartForm {
     private JButton btnShow;
@@ -20,7 +21,7 @@ public class StartForm {
         });
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         JFrame frame = new JFrame("StartForm");
         frame.setContentPane(new StartForm().panelStart);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,8 +30,10 @@ public class StartForm {
         System.out.println("Form started");
 
         JSONReader.readMedicines();
-        JSONWriter.WriteMedicines();
+        JSONWriter.writeMedicines();
 
         JSONReader.readUsers();
+        JSONWriter.writeUsers();
+
     }
 }

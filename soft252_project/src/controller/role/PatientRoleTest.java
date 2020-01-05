@@ -9,20 +9,4 @@ public class PatientRoleTest {
     @Test
     public void getCommand() {
     }
-
-    @Test
-    public void addAppointment() {
-    }
-
-    @Test
-    public void removeAppointment() {
-    }
-
-    @Test
-    public void addPrescription() {
-    }
-
-    @Test
-    public void removePrescription() {
-    }
 }

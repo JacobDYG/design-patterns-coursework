@@ -9,20 +9,4 @@ public class DoctorRoleTest {
     @Test
     public void getCommand() {
     }
-
-    @Test
-    public void addAppointment() {
-    }
-
-    @Test
-    public void removeAppointment() {
-    }
-
-    @Test
-    public void addFeedback() {
-    }
-
-    @Test
-    public void removeFeedback() {
-    }
 }

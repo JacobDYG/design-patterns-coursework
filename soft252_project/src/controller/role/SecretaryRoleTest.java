@@ -9,12 +9,4 @@ public class SecretaryRoleTest {
     @Test
     public void getCommand() {
     }
-
-    @Test
-    public void addRequest() {
-    }
-
-    @Test
-    public void removeRequest() {
-    }
 }

@@ -8,4 +8,8 @@ public class AccountRequest extends Request {
         super(requestId);
         this.requestedUser = requestedUser;
     }
+
+    public User getRequestedUser() {
+        return requestedUser;
+    }
 }

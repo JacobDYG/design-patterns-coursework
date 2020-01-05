@@ -16,10 +16,11 @@ public class User {
     private int age;
 
     //Constructor for patient
-    public User(String role, PatientRole roleData, int userId, String name, String address, String gender, int age) {
-        if (role == "Patient")
+    public User(String role, IRoleData roleData, int userId, String name, String address, String gender, int age) {
+        if (role.equals("Patient") && (roleData instanceof PatientRoleData))
         {
             this.role = role;
+            this.roleData = roleData;
             this.userId = userId;
             this.name = name;
             this.address = address;
@@ -34,9 +35,10 @@ public class User {
     }
     //Constructor for non patients
     public User(String role, IRoleData roleData, int userId, String name, String address) {
-        if (role != "Patient" && !(roleData instanceof PatientRoleData))
+        if (!role.equals("Patient") && !(roleData instanceof PatientRoleData))
         {
             this.role = role;
+            this.roleData = roleData;
             this.userId = userId;
             this.name = name;
             this.address = address;
@@ -70,6 +72,11 @@ public class User {
 
     public int getAge() {
         return age;
+    }
+
+    public IRoleData getRoleData()
+    {
+        return roleData;
     }
 
     //Setters for all attributes except userId, as this does not need to change

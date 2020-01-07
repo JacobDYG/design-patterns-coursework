@@ -29,6 +29,7 @@ public class Auth {
     {
         User newAdmin = new User("Admin", username, password, new AdminRoleData(), findUserId(),  name, address);
         CurrentData.addUser(newAdmin);
+        System.out.println("yuh");
     }
     public static int findUserId()
     {

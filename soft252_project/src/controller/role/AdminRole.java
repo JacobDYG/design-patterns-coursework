@@ -18,6 +18,13 @@ public class AdminRole implements IRole {
 
     //Adds the default actions to the allowedActions list.
     private void addDefaultActions(){
+        allowedCommands.add(new UpdatePendingFeedbackList());
+        allowedCommands.add(new CreateUser());
+        allowedCommands.add(new UpdateUsersList());
+        allowedCommands.add(new RemoveUser());
+        allowedCommands.add(new RemovePendingFeedback());
+        allowedCommands.add(new UpdatePendingFeedbackForm());
+        allowedCommands.add(new CreateFeedback());
     }
 
     @Override

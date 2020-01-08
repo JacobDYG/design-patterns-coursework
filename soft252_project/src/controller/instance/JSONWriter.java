@@ -25,6 +25,7 @@ public class JSONWriter {
 
             thisMedicineDetails.put("medicineId", medicine.getMedicineId());
             thisMedicineDetails.put("medicineName", medicine.getMedicineName());
+            thisMedicineDetails.put("quantityInStock", medicine.getQuantityInStock());
 
             thisMedicine.put("medicine", thisMedicineDetails);
             medicineArray.add(thisMedicine);
@@ -200,12 +201,17 @@ public class JSONWriter {
         thisAppointmentDetails.put("doctorId", appointment.getDoctorId());
         thisAppointmentDetails.put("patientId", appointment.getPatientId());
 
-        SimpleDateFormat format = new SimpleDateFormat("dd-mm-yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("dd-mm-yyyy hh:mm");
         String appointmentDate = format.format(appointment.getAppointmentDate());
 
         thisAppointmentDetails.put("appointmentDate", appointmentDate);
 
+        if (!(appointment.getAppointmentNotes() == null)) {
+            thisAppointmentDetails.put("appointmentNotes", appointment.getAppointmentNotes());
+        }
+
         thisAppointment.put("appointment", thisAppointmentDetails);
+
         return thisAppointment;
     }
 

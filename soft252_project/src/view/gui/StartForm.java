@@ -1,7 +1,9 @@
 package view.gui;
 
+import com.sun.tools.javac.Main;
 import controller.instance.Auth;
 import controller.instance.JSONReader;
+import view.instance.CurrentUser;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -10,9 +12,18 @@ import java.io.File;
 import java.io.IOException;
 
 public class StartForm {
-    private JButton btnShow;
     private JPanel panelStart;
+    private JLabel lblLogin;
+    private JTextField txtUsername;
+    private JPasswordField txtPassword;
+    private JButton btnLogin;
+    private JLabel lblUsername;
+    private JLabel lblPassword;
     private JFrame frame;
+    private MainAdmin adminForm;
+    private MainSecretary secretaryForm;
+    private MainDoctor doctorForm;
+    private MainPatient patientForm;
 
     public StartForm() {
         //Initialize  this form
@@ -23,11 +34,35 @@ public class StartForm {
 
         //Prepares the data for the system, and checks if there is an admin
         initializeData();
-
-        btnShow.addActionListener(new ActionListener() {
+        btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "TestMessage");
+                Auth.login(txtUsername.getText(), txtPassword.getText());
+                if (CurrentUser.getCurrentUser() != null)
+                {
+                    switch(CurrentUser.getCurrentUser().getRole()) {
+                        case "Admin": {
+                            adminForm = new MainAdmin(frame);
+                            break;
+                        }
+                        case "Secretary": {
+                            secretaryForm = new MainSecretary(frame);
+                            break;
+                        }
+                        case "Doctor": {
+                            doctorForm = new MainDoctor(frame);
+                            break;
+                        }
+                        case "Patient": {
+                            patientForm = new MainPatient(frame);
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "User not found! Check details and try again");
+                }
             }
         });
     }

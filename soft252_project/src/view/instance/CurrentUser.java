@@ -20,12 +20,12 @@ public class CurrentUser {
         return currentUser;
     }
 
-    public String getRoleName()
+    public static String getRoleName()
     {
         return userRole.getName();
     }
 
-    public ICommand getCommand(String request)
+    public static ICommand getCommand(String request)
     {
         return userRole.getCommand(request);
     }
@@ -36,14 +36,28 @@ public class CurrentUser {
         String role = currentUser.getRole();
         switch(role)
         {
-            case "Admin":
+            case "Admin": {
                 userRole = new AdminRole();
-            case "Secretary":
+                break;
+            }
+            case "Secretary": {
                 userRole = new SecretaryRole();
-            case "Patient":
+                break;
+            }
+            case "Patient": {
                 userRole = new PatientRole();
-            case "Doctor":
+                break;
+            }
+            case "Doctor": {
                 userRole = new DoctorRole();
+                break;
+            }
         }
+    }
+
+    public static void clearCurrentUser()
+    {
+        currentUser = null;
+        userRole = null;
     }
 }

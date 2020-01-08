@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="view.gui.MainDoctor">
+  <grid id="27dc6" binding="doctorPanel" layout-manager="GridLayoutManager" row-count="7" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="778" height="514"/>
+    </constraints>
+    <properties>
+      <background color="-986896"/>
+    </properties>
+    <border type="empty">
+      <size top="5" left="5" bottom="5" right="5"/>
+    </border>
+    <children>
+      <scrollpane id="1947a" binding="scrollAppointment">
+        <constraints>
+          <grid row="2" column="1" row-span="5" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="350" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="6e9a2" class="javax.swing.JList" binding="lstAppointment">
+            <constraints/>
+            <properties>
+              <model/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="edd97" class="javax.swing.JButton" binding="btnLogout">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="5" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Logout"/>
+        </properties>
+      </component>
+      <component id="c2008" class="javax.swing.JButton" binding="btnAddNotes">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="View/add notes to consultation"/>
+        </properties>
+      </component>
+      <component id="edf54" class="javax.swing.JButton" binding="btnViewHistory">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="View Patient History"/>
+        </properties>
+      </component>
+      <component id="9d461" class="javax.swing.JButton" binding="btnCreateAppointment">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Create Appointment"/>
+        </properties>
+      </component>
+      <component id="43836" class="javax.swing.JButton" binding="btnCreatePrescription">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Create Prescription"/>
+        </properties>
+      </component>
+      <component id="eb6e7" class="javax.swing.JButton" binding="btnCreateMedicine">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Create New Medicines"/>
+        </properties>
+      </component>
+      <component id="4053a" class="javax.swing.JLabel" binding="lblAppointments">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="28" height="25"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Upcoming Appointments:"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

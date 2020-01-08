@@ -47,8 +47,9 @@ public class JSONReader {
 
         int medicineId = (int)(long) medicineObject.get("medicineId");
         String medicineName = (String) medicineObject.get("medicineName");
+        int quantityInStock = (int)(long) medicineObject.get("quantityInStock");
 
-        CurrentData.addMedicine(new Medicine(medicineId, medicineName));
+        CurrentData.addMedicine(new Medicine(medicineId, medicineName, quantityInStock));
     }
 
     public static void readUsers()
@@ -284,14 +285,22 @@ public class JSONReader {
         }
         int doctorId = (int)(long) appointmentObject.get("doctorId");
         int patientId = (int)(long) appointmentObject.get("patientId");
+        String appointmentNotes = null;
         Date appointmentDate;
+        if (appointmentObject.containsKey("appointmentNotes"))
+        {
+            appointmentNotes = (String) appointmentObject.get("appointmentNotes");
+        }
 
         Appointment thisAppointment = null;
 
-        SimpleDateFormat format = new SimpleDateFormat("dd-mm-yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("dd-mm-yyyy hh:mm");
         try {
             appointmentDate = format.parse((String)appointmentObject.get("appointmentDate"));
-            thisAppointment = new Appointment( appointmentId, doctorId, patientId, appointmentDate);
+            if(appointmentNotes == null)
+                thisAppointment = new Appointment( appointmentId, doctorId, patientId, appointmentDate);
+            else
+                thisAppointment = new Appointment( appointmentId, doctorId, patientId, appointmentDate, appointmentNotes);
         } catch (java.text.ParseException e) {
             e.printStackTrace();
         }

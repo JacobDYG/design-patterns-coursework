@@ -1,9 +1,13 @@
 package model.stored.role;
 
+import model.instance.CurrentData;
 import model.stored.Appointment;
 import model.stored.Feedback;
+import model.stored.User;
 
+import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DoctorRoleData implements IRoleData {
@@ -48,5 +52,23 @@ public class DoctorRoleData implements IRoleData {
     public List<Feedback> getFeedbackList()
     {
         return feedbackList;
+    }
+
+    public void updateAppointmentList(JList lstAppointment)
+    {
+        DefaultListModel listModel = new DefaultListModel<>();
+        for (Appointment appointment : appointmentList)
+        {
+            User patient = null;
+            for (User user : CurrentData.getAllUsers())
+            {
+                if (user.getUserId() == appointment.getPatientId())
+                    patient = user;
+            }
+            Date now = new Date();
+            if (appointment.getAppointmentDate().compareTo(now) >= 0)
+            listModel.addElement("Appointment ID: " + appointment.getAppointmentId() + ", Patient ID: "  + appointment.getPatientId() + ", Patient Name: " + patient.getName() + ", Date/Time: " + appointment.getAppointmentDate());
+        }
+        lstAppointment.setModel(listModel);
     }
 }

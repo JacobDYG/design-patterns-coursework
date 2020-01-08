@@ -1,1 +1,1 @@
-[]
+[{"medicine":{"quantityInStock":50,"medicineId":1,"medicineName":"Paracetamol"}},{"medicine":{"quantityInStock":35,"medicineId":2,"medicineName":"Ibuprofen"}},{"medicine":{"quantityInStock":0,"medicineId":3,"medicineName":"Amoxicillin"}},{"medicine":{"quantityInStock":0,"medicineId":4,"medicineName":"Azithromycin"}}]

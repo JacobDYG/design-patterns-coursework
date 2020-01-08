@@ -19,6 +19,15 @@ public class DoctorRole implements IRole {
 
     //Adds the default actions to the allowedActions list.
     private void addDefaultActions(){
+        allowedCommands.add(new UpdateAppointmentList());
+        allowedCommands.add(new UpdateAppointmentNotesForm());
+        allowedCommands.add(new UpdateAppointmentNotes());
+        allowedCommands.add(new UpdateUsersCombo());
+        allowedCommands.add(new UpdatePatientHistoryForm());
+        allowedCommands.add(new CreateAppointment());
+        allowedCommands.add(new UpdateMedicinesCombo());
+        allowedCommands.add(new UpdatePrescriptionCreator());
+        allowedCommands.add(new CreateNewMedicine());
     }
 
     @Override

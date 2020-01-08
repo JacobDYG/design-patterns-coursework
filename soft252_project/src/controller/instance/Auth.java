@@ -3,17 +3,20 @@ package controller.instance;
 import model.instance.CurrentData;
 import model.stored.User;
 import model.stored.role.AdminRoleData;
+import view.instance.CurrentUser;
 
 public class Auth {
-    public static User login(String username, String password)
+    public static void login(String username, String password)
     {
         //Checks all the users in the system for a match, and returns the user if so.
         for (User thisUser : CurrentData.getAllUsers())
         {
-            if (thisUser.getUsername() == username && thisUser.getPassword() == password)
-                return thisUser;
+            if (thisUser.getUsername().equals(username)  && thisUser.getPassword().equals(password))
+            {
+                CurrentUser.setCurrentUser(thisUser);
+                break;
+            }
         }
-        return null;
     }
     public static boolean adminCheck()
     {
@@ -29,7 +32,6 @@ public class Auth {
     {
         User newAdmin = new User("Admin", username, password, new AdminRoleData(), findUserId(),  name, address);
         CurrentData.addUser(newAdmin);
-        System.out.println("yuh");
     }
     public static int findUserId()
     {

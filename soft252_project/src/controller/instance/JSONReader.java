@@ -163,7 +163,8 @@ public class JSONReader {
             if(requestObject.containsKey("user"))
             {
                 User thisUser = parseUserObject(requestObject);
-                thisRequest = new AccountRequest(requestId, thisUser);
+                boolean deletionRequest = (boolean)requestObject.get("deletionRequest");
+                thisRequest = new AccountRequest(requestId, thisUser, deletionRequest);
             }
             else
             {

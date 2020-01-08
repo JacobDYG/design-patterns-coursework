@@ -169,6 +169,7 @@ public class JSONWriter {
 
         thisRequestDetails.put("requestId", request.getRequestId());
         thisRequestDetails.put("user", putUserDetails(((AccountRequest)request).getRequestedUser()));
+        thisRequestDetails.put("deletionRequest", ((AccountRequest) request).isDeletionRequest());
 
         thisRequest.put("request", thisRequestDetails);
         return thisRequest;

@@ -1,1 +1,229 @@
-[{"user":{"password":"password","role":"Admin","address":"12 Dave Street","pendingFeedbackList":[{"feedback":{"feedbackNotes":"Good experience","doctorUserId":3,"rating":4,"feedbackId":1}}],"name":"Dave Adminson","userId":0,"username":"admindave"}},{"user":{"password":"password","role":"Doctor","address":"Denise's House, 66 Denise Street","name":"Denise the Doctor","appointmentList":[{"appointment":{"doctorId":3,"patientId":4,"appointmentId":4,"appointmentDate":"10-30-2020 10:30","appointmentNotes":"Example Appointment Notes!!!"}},{"appointment":{"doctorId":3,"patientId":4,"appointmentId":3,"appointmentDate":"20-30-2019 02:30","appointmentNotes":"Patient was sick, prescribed paracetamol"}},{"appointment":{"doctorId":3,"patientId":4,"appointmentId":5,"appointmentDate":"14-45-2020 02:45"}}],"userId":3,"feedbackList":[{"feedback":{"feedbackNotes":"Nice experience","doctorUserId":3,"rating":4,"feedbackId":8}},{"feedback":{"feedbackNotes":"Okay experience","doctorUserId":3,"rating":3,"feedbackId":9}}],"username":"doctordenise"}},{"user":{"password":"password","role":"Patient","address":"Penny's House, 12 Penny Street","gender":"female","name":"Penny the Patient","prescriptionList":[{"prescription":{"prescriptionId":1,"doctorId":3,"patientId":4,"prescribedMedicineList":[{"prescribedMedicine":{"dosage":"100mg","quantity":1,"medicineId":1}},{"prescribedMedicine":{"dosage":"100mg","quantity":1,"medicineId":2}}],"doctorNotes":"Don't take too many!!!"}},{"prescription":{"prescriptionId":2,"doctorId":3,"patientId":4,"prescribedMedicineList":[{"prescribedMedicine":{"dosage":"250mg","quantity":1,"medicineId":1}},{"prescribedMedicine":{"dosage":"250mg","quantity":1,"medicineId":2}}],"doctorNotes":"Example notes"}}],"appointmentList":[{"appointment":{"doctorId":3,"patientId":4,"appointmentId":4,"appointmentDate":"10-30-2020 10:30","appointmentNotes":"Example Appointment Notes!!!"}},{"appointment":{"doctorId":3,"patientId":4,"appointmentId":3,"appointmentDate":"20-30-2019 02:30","appointmentNotes":"Patient was sick, prescribed paracetamol"}},{"appointment":{"doctorId":3,"patientId":4,"appointmentId":5,"appointmentDate":"14-45-2020 02:45"}}],"userId":4,"age":30,"username":"patientpenny"}},{"user":{"password":"password","role":"Secretary","address":"11 Steve Road","requestList":[],"name":"Steve Secertarial","userId":5,"username":"secretarysteve"}}]
+[
+    {
+       "user":{
+          "password":"password",
+          "role":"Admin",
+          "address":"12 Dave Street",
+          "pendingFeedbackList":[
+             {
+                "feedback":{
+                   "feedbackNotes":"Good experience",
+                   "doctorUserId":3,
+                   "rating":4,
+                   "feedbackId":0
+                }
+             }
+          ],
+          "name":"Dave Adminson",
+          "userId":0,
+          "username":"admindave"
+       }
+    },
+    {
+       "user":{
+          "password":"password",
+          "role":"Doctor",
+          "address":"Denise's House, 66 Denise Street",
+          "name":"Denise the Doctor",
+          "appointmentList":[
+             {
+                "appointment":{
+                   "doctorId":3,
+                   "patientId":4,
+                   "appointmentId":4,
+                   "appointmentDate":"10-30-2020 10:30",
+                   "appointmentNotes":"Example Appointment Notes!!!"
+                }
+             },
+             {
+                "appointment":{
+                   "doctorId":3,
+                   "patientId":4,
+                   "appointmentId":3,
+                   "appointmentDate":"20-30-2019 02:30",
+                   "appointmentNotes":"Patient was sick, prescribed paracetamol"
+                }
+             },
+             {
+                "appointment":{
+                   "doctorId":3,
+                   "patientId":4,
+                   "appointmentId":5,
+                   "appointmentDate":"14-45-2020 02:45"
+                }
+             }
+          ],
+          "userId":3,
+          "feedbackList":[
+             {
+                "feedback":{
+                   "feedbackNotes":"Nice experience",
+                   "doctorUserId":3,
+                   "rating":4,
+                   "feedbackId":8
+                }
+             },
+             {
+                "feedback":{
+                   "feedbackNotes":"Okay experience",
+                   "doctorUserId":3,
+                   "rating":3,
+                   "feedbackId":9
+                }
+             }
+          ],
+          "username":"doctordenise"
+       }
+    },
+    {
+       "user":{
+          "password":"password",
+          "role":"Patient",
+          "address":"Penny's House, 12 Penny Street",
+          "gender":"female",
+          "name":"Penny the Patient",
+          "prescriptionList":[
+             {
+                "prescription":{
+                   "prescriptionId":1,
+                   "doctorId":3,
+                   "patientId":4,
+                   "prescribedMedicineList":[
+                      {
+                         "prescribedMedicine":{
+                            "dosage":"100mg",
+                            "quantity":1,
+                            "medicineId":1
+                         }
+                      },
+                      {
+                         "prescribedMedicine":{
+                            "dosage":"100mg",
+                            "quantity":1,
+                            "medicineId":2
+                         }
+                      }
+                   ],
+                   "doctorNotes":"Don't take too many!!!"
+                }
+             },
+             {
+                "prescription":{
+                   "prescriptionId":2,
+                   "doctorId":3,
+                   "patientId":4,
+                   "prescribedMedicineList":[
+                      {
+                         "prescribedMedicine":{
+                            "dosage":"250mg",
+                            "quantity":1,
+                            "medicineId":1
+                         }
+                      },
+                      {
+                         "prescribedMedicine":{
+                            "dosage":"250mg",
+                            "quantity":1,
+                            "medicineId":2
+                         }
+                      }
+                   ],
+                   "doctorNotes":"Example notes"
+                }
+             }
+          ],
+          "appointmentList":[
+             {
+                "appointment":{
+                   "doctorId":3,
+                   "patientId":4,
+                   "appointmentId":4,
+                   "appointmentDate":"10-30-2020 10:30",
+                   "appointmentNotes":"Example Appointment Notes!!!"
+                }
+             },
+             {
+                "appointment":{
+                   "doctorId":3,
+                   "patientId":4,
+                   "appointmentId":3,
+                   "appointmentDate":"20-30-2019 02:30",
+                   "appointmentNotes":"Patient was sick, prescribed paracetamol"
+                }
+             },
+             {
+                "appointment":{
+                   "doctorId":3,
+                   "patientId":4,
+                   "appointmentId":5,
+                   "appointmentDate":"14-45-2020 02:45"
+                }
+             }
+          ],
+          "userId":4,
+          "age":30,
+          "username":"patientpenny"
+       }
+    },
+    {
+       "user":{
+          "password":"password",
+          "role":"Secretary",
+          "address":"11 Steve Road",
+          "requestList":[
+             {
+                "request":{
+                   "patientId":4,
+                   "doctorId":3,
+                   "requestId":-1,
+                   "possibleDatesEnd":"15-02-2020",
+                   "possibleDatesStart":"20-01-2020"
+                }
+             },
+             {
+                "request":{
+                   "requestId":0,
+                   "deletionRequest":true,
+                   "user":{
+                      "password":"password",
+                      "role":"Patient",
+                      "address":"Paddy's House, 12 Paddy Street",
+                      "gender":"male",
+                      "name":"Paddy the Patient",
+                      "prescriptionList":[
+ 
+                      ],
+                      "appointmentList":[
+ 
+                      ],
+                      "userId":7,
+                      "age":40,
+                      "username":"paddy"
+                   }
+                }
+             }
+          ],
+          "name":"Steve Secertarial",
+          "userId":5,
+          "username":"secretarysteve"
+       }
+    },
+    {
+       "user":{
+          "password":"password",
+          "role":"Patient",
+          "address":"Paddy's House, 12 Paddy Street",
+          "gender":"male",
+          "name":"Paddy the Patient",
+          "prescriptionList":[
+ 
+          ],
+          "appointmentList":[
+ 
+          ],
+          "userId":7,
+          "age":40,
+          "username":"paddy"
+       }
+    }
+ ]

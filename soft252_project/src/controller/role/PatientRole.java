@@ -19,6 +19,12 @@ public class PatientRole implements IRole {
 
     //Adds the default actions to the allowedActions list.
     private void addDefaultActions(){
+        allowedCommands.add(new UpdateAppointmentList());
+        allowedCommands.add(new UpdatePatientHistoryForm());
+        allowedCommands.add(new CreateAppointmentRequest());
+        allowedCommands.add(new CreateFeedbackRequest());
+        allowedCommands.add(new UpdateUsersCombo());
+        allowedCommands.add(new CreateAccountRequest());
     }
 
     //Get the friendly name of this role

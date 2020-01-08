@@ -25,17 +25,36 @@ public class ViewPatientHistory {
 
     public ViewPatientHistory(JFrame oldForm) {
         //Initialize  this form
+        prepare(oldForm);
+
+        //Populate the patient list
+        updatePatientList();
+        //Update patient history
+        updatePatientHistory();
+    }
+
+    public ViewPatientHistory(JFrame oldForm, int patientId) {
+        //Initialize  this form
+        prepare(oldForm);
+
+        DefaultComboBoxModel defaultComboBoxModel = new DefaultComboBoxModel();
+        defaultComboBoxModel.addElement("User ID: " + CurrentUser.getCurrentUser().getUserId() + ", (Current User)");
+        cmbSelectPatient.setModel(defaultComboBoxModel);
+        cmbSelectPatient.setEnabled(false);
+
+        //Update patient history
+        updatePatientHistory();
+    }
+
+    private void prepare(JFrame oldForm)
+    {
+        //initialise the form
         frame = new JFrame("View Patient History");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(100, 100, 1000, 700);
         frame.setContentPane(panelViewPatientHistory);
         frame.setVisible(true);
         oldForm.setVisible(false);
-
-        //Populate the patient list
-        updatePatientList();
-        //Update patient history
-        updatePatientHistory();
 
         cmbSelectPatient.addActionListener(new ActionListener() {
             @Override

@@ -1,7 +1,6 @@
 package controller.role;
 
 import controller.command.*;
-import model.stored.Request;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +17,14 @@ public class SecretaryRole implements IRole {
 
     //Adds the default actions to the allowedActions list.
     private void addDefaultActions(){
+        allowedCommands.add(new UpdateAccountRequestsList());
+        allowedCommands.add(new UpdateMedicinesList());
+        allowedCommands.add(new ApproveAccountRequest());
+        allowedCommands.add(new UpdateMedicineQuantity());
+        allowedCommands.add(new UpdateUsersList());
+        allowedCommands.add(new RemoveUser());
+        allowedCommands.add(new UpdateAppointmentRequestsList());
+        allowedCommands.add(new ApproveAppointmentRequest());
     }
 
     @Override

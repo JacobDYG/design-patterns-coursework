@@ -25,7 +25,7 @@ public class CreatePrescription {
     private JButton lblAdd;
     private JButton lblConfirm;
     private JButton lblCancel;
-    private JPanel panelCreatePrescription;
+    private JPanel pnlCreatePrescription;
     private JScrollPane scrMedicineList;
     private JList lstPrescribedMedicines;
     private JFrame frame;
@@ -88,7 +88,7 @@ public class CreatePrescription {
         frame = new JFrame("Create prescription");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(100, 100, 900, 600);
-        frame.setContentPane(panelCreatePrescription);
+        frame.setContentPane(pnlCreatePrescription);
         frame.setVisible(true);
         oldForm.setVisible(false);
         updatePrescriptionCreator  = (UpdatePrescriptionCreator)CurrentUser.getCommand("UpdatePrescriptionCreator");

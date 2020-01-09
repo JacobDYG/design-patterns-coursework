@@ -21,7 +21,7 @@ public class CreateUser {
     private JPasswordField txtPassword;
     private JButton btnCreateUser;
     private JButton btnCancel;
-    private JPanel frmCreateUser;
+    private JPanel pnlCreateUser;
     private JFrame frame;
 
     public CreateUser(JFrame oldForm)
@@ -30,7 +30,7 @@ public class CreateUser {
         frame = new JFrame("Admin Panel");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(100, 100, 500, 400);
-        frame.setContentPane(frmCreateUser);
+        frame.setContentPane(pnlCreateUser);
         frame.setVisible(true);
         oldForm.setVisible(false);
 

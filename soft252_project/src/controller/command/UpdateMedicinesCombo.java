@@ -5,6 +5,7 @@ import model.stored.Medicine;
 
 import javax.swing.*;
 
+//updates a combo box with current medicines for creating prescriptions
 public class UpdateMedicinesCombo implements ICommand{
     String name = "UpdateMedicinesCombo";
     DefaultComboBoxModel medicinesCombo;
@@ -26,6 +27,7 @@ public class UpdateMedicinesCombo implements ICommand{
     {
         medicinesCombo = new DefaultComboBoxModel();
         this.comboToUpdate = comboToUpdate;
+        //add all medicines to the list
         for (Medicine medicine : CurrentData.getAllMedicines())
         {
             medicinesCombo.addElement("Medicine ID: " + medicine.getMedicineId() + ", Medicine Name: " + medicine.getMedicineName());

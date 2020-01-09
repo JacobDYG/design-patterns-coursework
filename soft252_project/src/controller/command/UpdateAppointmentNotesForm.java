@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.util.List;
 
 public class UpdateAppointmentNotesForm implements ICommand {
+    //updates the appointment notes form text area with any notes that may have already been written
     String name = "UpdateAppointmentNotesForm";
     Appointment appointment;
     int appointmentId;
@@ -23,6 +24,7 @@ public class UpdateAppointmentNotesForm implements ICommand {
     @Override
     public void perform() {
         List<Appointment> appointmentList = ((DoctorRoleData) CurrentUser.getCurrentUser().getRoleData()).getAppointmentList();
+        //iterate through all appointments to find the relevant one
         for (Appointment appointment : appointmentList)
         {
             if(appointment.getAppointmentId() == appointmentId)

@@ -9,13 +9,13 @@ import java.awt.event.ActionListener;
 
 public class MainAdmin {
     private JFrame frame;
-    private JPanel adminPanel;
+    private JPanel pnlAdmin;
     private JButton btnAddUser;
     private JButton btnRemoveUser;
     private JButton btnLogout;
     private JButton btnCreateFeedback;
     private JList lstPendingFeedback;
-    private JScrollPane scrollFeedback;
+    private JScrollPane scrFeedback;
     private JLabel lblPendingFeedback;
     private CreateUser createUser;
     private RemoveUser removeUser;
@@ -26,7 +26,7 @@ public class MainAdmin {
         frame = new JFrame("Admin Panel");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(100, 100, 1000, 600);
-        frame.setContentPane(adminPanel);
+        frame.setContentPane(pnlAdmin);
         frame.setVisible(true);
         oldForm.setVisible(false);
         //update the feedback list
@@ -49,7 +49,7 @@ public class MainAdmin {
         btnRemoveUser.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                removeUser = new RemoveUser(frame);
+                removeUser = new RemoveUser(frame, false, true, true, false);
             }
         });
         btnCreateFeedback.addActionListener(new ActionListener() {

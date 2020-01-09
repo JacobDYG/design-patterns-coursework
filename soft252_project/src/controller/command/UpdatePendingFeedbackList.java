@@ -5,6 +5,7 @@ import view.instance.CurrentUser;
 
 import javax.swing.*;
 
+//updates a list of pending feedback for the admin to look through
 public class UpdatePendingFeedbackList implements ICommand {
     String name = "UpdatePendingFeedbackList";
     JList listToUpdate;

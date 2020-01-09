@@ -13,7 +13,7 @@ public class CreateAdmin extends JFrame {
     private JTextField txtFullName;
     private JTextField txtAddress;
     private JButton btnCreate;
-    public JPanel panelStart;
+    public JPanel pnlStart;
     private JLabel lblUsername;
     private JLabel lblPassword;
     private JLabel lblFullName;
@@ -22,13 +22,14 @@ public class CreateAdmin extends JFrame {
     private JLabel lblPasswordRequired;
     private JLabel lblFullNameRequired;
     private JLabel lblAddressRequired;
+    private JLabel lblCreateAdmin;
 
     private JFrame thisFrame = this;
 
     public CreateAdmin(JFrame caller) {
         thisFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         thisFrame.setBounds(100, 100, 450, 300);
-        thisFrame.setContentPane(panelStart);
+        thisFrame.setContentPane(pnlStart);
         thisFrame.setVisible(true);
 
         btnCreate.addActionListener(new ActionListener() {

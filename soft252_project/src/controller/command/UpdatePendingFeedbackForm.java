@@ -7,6 +7,8 @@ import view.instance.CurrentUser;
 import javax.swing.*;
 import java.util.List;
 
+//loads patient feedback into a provided JTextField and JTextArea for sending feedback onwards to a doctor
+//populates the fields with notes from the patient which can be modified by the admin
 public class UpdatePendingFeedbackForm implements ICommand {
     String name = "UpdatePendingFeedbackForm";
     Feedback feedback;
@@ -22,6 +24,7 @@ public class UpdatePendingFeedbackForm implements ICommand {
     @Override
     public void perform() {
         List<Feedback> feedbackList = ((AdminRoleData) CurrentUser.getCurrentUser().getRoleData()).getFeedbackList();
+        //iterate through all feedback to find the feedback
         for (Feedback feedback : feedbackList)
         {
             if(feedback.getFeedbackId() == feedbackId)

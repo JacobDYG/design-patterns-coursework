@@ -5,6 +5,7 @@ import model.stored.User;
 
 import javax.swing.*;
 
+//updates a passed combo box with all the users of the specified type
 public class UpdateUsersCombo implements ICommand {
     String name = "UpdateUsersCombo";
     DefaultComboBoxModel userCombo;
@@ -15,6 +16,7 @@ public class UpdateUsersCombo implements ICommand {
         return name;
     }
 
+    @Override
     public void perform()
     {
         comboToUpdate.setModel(userCombo);
@@ -24,6 +26,7 @@ public class UpdateUsersCombo implements ICommand {
     {
         userCombo = new DefaultComboBoxModel();
         this.comboToUpdate = comboToUpdate;
+        //go through every user and add them to the list if they meet the specified criterea
         for (User user: CurrentData.getAllUsers())
         {
             if (user.getRole().equals("Admin") && admin)

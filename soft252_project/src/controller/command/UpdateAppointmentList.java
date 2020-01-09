@@ -7,6 +7,8 @@ import view.instance.CurrentUser;
 
 import javax.swing.*;
 
+//Updates a provided JList element with a users appointments
+//logic is contained within the roles as it the process is role specific
 public class UpdateAppointmentList implements ICommand {
     String name = "UpdateAppointmentList";
     JList listToUpdate;

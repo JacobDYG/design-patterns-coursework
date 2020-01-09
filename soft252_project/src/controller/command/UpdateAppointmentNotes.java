@@ -8,7 +8,7 @@ import javax.swing.*;
 import java.util.List;
 
 public class UpdateAppointmentNotes implements ICommand {
-
+    //updates an appointment with data entered by a doctor in a form, from the passed JTextArea
     String name = "UpdateAppointmentNotes";
     Appointment appointment;
     int appointmentId;
@@ -22,6 +22,7 @@ public class UpdateAppointmentNotes implements ICommand {
     @Override
     public void perform() {
         List<Appointment> appointmentList = ((DoctorRoleData) CurrentUser.getCurrentUser().getRoleData()).getAppointmentList();
+        //iterate through all appointments to find the relevant one
         for (Appointment appointment : appointmentList)
         {
             if(appointment.getAppointmentId() == appointmentId)

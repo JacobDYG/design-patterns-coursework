@@ -14,16 +14,26 @@ public class RemoveUser {
     private JButton btnCancel;
     private JList lstUsers;
     private JPanel pnlRemoveUser;
+    private JScrollPane scrUsers;
     private JFrame frame;
+    boolean admin = false;
+    boolean secretary = false;
+    boolean doctor = false;
+    boolean patient = false;
 
-    public RemoveUser(JFrame oldForm)
+    public RemoveUser(JFrame oldForm, boolean admin, boolean secretary, boolean doctor, boolean patient)
     {
-        frame = new JFrame("Admin Panel");
+        frame = new JFrame("Remove user");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(100, 100, 500, 400);
         frame.setContentPane(pnlRemoveUser);
         frame.setVisible(true);
         oldForm.setVisible(false);
+
+        this.admin = admin;
+        this.secretary = secretary;
+        this.doctor = doctor;
+        this.patient = patient;
 
         updateList();
 
@@ -51,7 +61,7 @@ public class RemoveUser {
     private void updateList()
     {
         UpdateUsersList updateUsersList = (UpdateUsersList)CurrentUser.getCommand("UpdateUsersList");
-        updateUsersList.prepare(lstUsers, false, true, true, false);
+        updateUsersList.prepare(lstUsers, admin, secretary, doctor, patient);
         updateUsersList.perform();
     }
 }

@@ -3,7 +3,6 @@ package view.gui;
 import controller.command.UpdateAppointmentList;
 import controller.command.UpdateUsersCombo;
 import controller.instance.JSONWriter;
-import model.stored.Appointment;
 import view.instance.CurrentUser;
 
 import javax.swing.*;
@@ -13,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CreateAppointment {
-    private JPanel panelCreateAppointment;
+    private JPanel pnlCreateAppointment;
     private JLabel lblCreateAppointment;
     private JLabel lblDoctor;
     private JLabel lblPatient;
@@ -67,7 +66,7 @@ public class CreateAppointment {
         frame = new JFrame("Create Appointment");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(100, 100, 500, 400);
-        frame.setContentPane(panelCreateAppointment);
+        frame.setContentPane(pnlCreateAppointment);
         frame.setVisible(true);
         oldForm.setVisible(false);
         this.listToUpdate = listToUpdate;

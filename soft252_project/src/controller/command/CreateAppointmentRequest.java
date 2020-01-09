@@ -15,11 +15,13 @@ public class CreateAppointmentRequest implements ICommand {
     Date possibleDatesStart;
     Date possibleDatesEnd;
 
+    @Override
     public String getName()
     {
         return name;
     }
 
+    @Override
     public void perform()
     {
         //find a request id and secretary

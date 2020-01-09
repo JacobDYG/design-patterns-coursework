@@ -2,10 +2,7 @@ package view.gui;
 
 import controller.command.CreateNewMedicine;
 import controller.command.UpdateAppointmentList;
-import controller.command.UpdatePendingFeedbackList;
 import controller.instance.JSONWriter;
-import model.instance.CurrentData;
-import model.stored.role.DoctorRoleData;
 import view.instance.CurrentUser;
 
 import javax.swing.*;
@@ -14,9 +11,9 @@ import java.awt.event.ActionListener;
 
 public class MainDoctor {
     private JFrame frame;
-    private JPanel doctorPanel;
+    private JPanel pnlDoctor;
     private JButton btnLogout;
-    private JScrollPane scrollAppointment;
+    private JScrollPane scrAppointment;
     private JList lstAppointment;
     private JButton btnAddNotes;
     private JButton btnViewHistory;
@@ -32,7 +29,7 @@ public class MainDoctor {
         frame = new JFrame("Doctor Panel");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(100, 100, 1000, 600);
-        frame.setContentPane(doctorPanel);
+        frame.setContentPane(pnlDoctor);
         frame.setVisible(true);
         oldForm.setVisible(false);
 

@@ -1,6 +1,5 @@
 package view.gui;
 
-import com.sun.tools.javac.Main;
 import controller.instance.Auth;
 import controller.instance.JSONReader;
 import view.instance.CurrentUser;
@@ -12,13 +11,14 @@ import java.io.File;
 import java.io.IOException;
 
 public class StartForm {
-    private JPanel panelStart;
+    private JPanel pnlStart;
     private JLabel lblLogin;
     private JTextField txtUsername;
     private JPasswordField txtPassword;
     private JButton btnLogin;
     private JLabel lblUsername;
     private JLabel lblPassword;
+    private JButton btnRegister;
     private JFrame frame;
     private MainAdmin adminForm;
     private MainSecretary secretaryForm;
@@ -30,7 +30,7 @@ public class StartForm {
         frame = new JFrame("Welcome");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(100, 100, 450, 300);
-        frame.setContentPane(panelStart);
+        frame.setContentPane(pnlStart);
 
         //Prepares the data for the system, and checks if there is an admin
         initializeData();
@@ -63,6 +63,12 @@ public class StartForm {
                 {
                     JOptionPane.showMessageDialog(null, "User not found! Check details and try again");
                 }
+            }
+        });
+        btnRegister.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CreatePatientAccountRequest createPatientAccountRequest = new CreatePatientAccountRequest(frame);
             }
         });
     }

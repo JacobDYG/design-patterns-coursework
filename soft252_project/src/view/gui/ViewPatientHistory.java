@@ -2,7 +2,6 @@ package view.gui;
 
 import controller.command.UpdatePatientHistoryForm;
 import controller.command.UpdateUsersCombo;
-import controller.command.UpdateUsersList;
 import view.instance.CurrentUser;
 
 import javax.swing.*;
@@ -15,10 +14,10 @@ public class ViewPatientHistory {
     private JComboBox cmbSelectPatient;
     private JLabel lblPrescriptions;
     private JLabel lblPastAppointments;
-    private JPanel panelViewPatientHistory;
+    private JPanel pnlViewPatientHistory;
     private JButton btnBack;
-    private JScrollPane scrollPrescriptions;
-    private JScrollPane scrollPastAppointments;
+    private JScrollPane scrPrescriptions;
+    private JScrollPane scrPastAppointments;
     private JList lstPrescriptions;
     private JList lstPastAppointments;
     private JFrame frame;
@@ -52,7 +51,7 @@ public class ViewPatientHistory {
         frame = new JFrame("View Patient History");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(100, 100, 1000, 700);
-        frame.setContentPane(panelViewPatientHistory);
+        frame.setContentPane(pnlViewPatientHistory);
         frame.setVisible(true);
         oldForm.setVisible(false);
 

@@ -20,6 +20,7 @@ public class RemovePendingFeedback implements ICommand {
     @Override
     public void perform()
     {
+        //Get the admins feedback list, and remove the provided feedback if it is in the list
         pendingFeedbackList = ((AdminRoleData)CurrentUser.getCurrentUser().getRoleData()).getFeedbackList();
         pendingFeedbackList.removeIf(feedback -> feedback.getFeedbackId() == feedbackId);
     }

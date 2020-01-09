@@ -5,6 +5,7 @@ import model.stored.User;
 
 import javax.swing.*;
 
+//updates a provided list with the all users of specified type(s)
 public class UpdateUsersList implements ICommand {
     String name = "UpdateUsersList";
     DefaultListModel userList;
@@ -15,6 +16,7 @@ public class UpdateUsersList implements ICommand {
         return name;
     }
 
+    @Override
     public void perform()
     {
         listToUpdate.setModel(userList);
@@ -24,6 +26,7 @@ public class UpdateUsersList implements ICommand {
     {
         userList = new DefaultListModel();
         this.listToUpdate = listToUpdate;
+        //go through all users to find ones that meet the specified criteria and add them to the list
         for (User user: CurrentData.getAllUsers())
         {
              if (user.getRole().equals("Admin") && admin)

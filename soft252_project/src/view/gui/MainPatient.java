@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 public class MainPatient {
     private JPanel pnlMainPatient;
     private JButton btnLogout;
-    private JScrollPane scrollAppointment;
+    private JScrollPane scrAppointment;
     private JList lstAppointment;
     private JLabel lblAppointments;
     private JButton btnViewPrescriptionsAndHistory;

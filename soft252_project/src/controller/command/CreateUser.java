@@ -23,8 +23,10 @@ public class CreateUser implements ICommand{
         return name;
     }
 
+    @Override
     public void perform()
     {
+        //Find what type of user needs to be created, and create the role specific data for that type
         if(role.equals("Patient"))
         {
             CurrentData.addUser(new User(role, username, password, new PatientRoleData(), Auth.findUserId(), fullName ,address, gender, age));
